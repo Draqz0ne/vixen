@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './App.css';
 import {CardList} from './components/cardlists/card-list.components'
-import {SearchBox} from './components/search-box/searchbox.components'
+import { SearchBox } from './components/searchbox/searchbox.components';
   
       
 class App extends Component{
@@ -10,8 +10,9 @@ class App extends Component{
 
     this.state={
      Monsters:[  ],
-     searchField: ''
+     searchField:' '
     } 
+    
   };
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -26,7 +27,7 @@ class App extends Component{
       <div className="App">
         <SearchBox 
           placeholder = 'Search Monsters'
-          handleChange = {e => this.setState({searchField:e.target.value})}
+          handleChange = {e =>this.setState({searchField:e.target.value})}
         />
          <CardList Monsters = {filteredMonsters} />
       </div>
